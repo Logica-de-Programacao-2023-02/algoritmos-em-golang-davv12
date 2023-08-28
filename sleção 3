@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func main() {
+	var numero int
+	fmt.Println("informe um numero")
+	fmt.Scan(&numero)
+	var rest int
+	rest = numero % 2
+	if rest == 0 {
+		fmt.Println("o numero é par")
+	} else {
+		fmt.Println("o numero é ímpar")
+	}
+}
