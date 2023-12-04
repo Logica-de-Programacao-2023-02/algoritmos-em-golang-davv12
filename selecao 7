@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main() {
+	var salario float64
+	fmt.Print("Informe o salário do funcionário: R$ ")
+	fmt.Scan(&salario)
+
+	var taxaMenorQue1000 float64 = 0.10
+	var taxaMaiorOuIgualA1000 float64 = 0.05
+
+	var novoSalario float64
+	if salario < 1000.00 {
+		novoSalario = salario * (1 + taxaMenorQue1000)
+	} else {
+		novoSalario = salario * (1 + taxaMaiorOuIgualA1000)
+	}
+
+	fmt.Printf("Novo salário: R$ %.2f\n", novoSalario)
+}
