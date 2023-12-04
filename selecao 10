@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+	var idade int
+	fmt.Print("Informe a idade: ")
+	fmt.Scan(&idade)
+
+	var classificacao string
+
+	switch {
+	case idade <= 9:
+		classificacao = "Mirim"
+	case idade <= 13:
+		classificacao = "Infantil"
+	case idade <= 17:
+		classificacao = "Juvenil"
+	default:
+		classificacao = "Adulto"
+	}
+
+	fmt.Printf("Classificação: %s\n", classificacao)
+}
