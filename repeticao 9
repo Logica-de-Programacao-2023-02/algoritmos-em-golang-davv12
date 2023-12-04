@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var total, quantidade int
+	var numero float64
+
+	fmt.Println("Informe números inteiros para calcular a média. Digite 0 para encerrar.")
+
+	for {
+		fmt.Print("Digite um número inteiro (ou 0 para encerrar): ")
+		fmt.Scan(&numero)
+
+		if numero == 0 {
+			break
+		}
+
+		total += int(numero)
+		quantidade++
+	}
+
+	if quantidade > 0 {
+		media := float64(total) / float64(quantidade)
+		fmt.Printf("A média dos números informados é: %.2f\n", media)
+	} else {
+		fmt.Println("Nenhum número foi informado.")
+	}
+}
