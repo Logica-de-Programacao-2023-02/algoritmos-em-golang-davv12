@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var maior, numero int
+
+	fmt.Println("Informe números inteiros para encontrar o maior. Digite 0 para encerrar.")
+
+	for {
+		fmt.Print("Digite um número inteiro (ou 0 para encerrar): ")
+		fmt.Scan(&numero)
+
+		if numero == 0 {
+			break
+		}
+
+		if numero > maior {
+			maior = numero
+		}
+	}
+
+	if maior != 0 {
+		fmt.Printf("O maior número informado é: %d\n", maior)
+	} else {
+		fmt.Println("Nenhum número foi informado.")
+	}
+}
