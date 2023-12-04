@@ -1,0 +1,10 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Múltiplos de 3 de 0 a 30:")
+	for i := 0; i <= 30; i += 3 {
+		fmt.Println(i)
+	}
+}
