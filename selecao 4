@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var altura, peso float64
+	var sexo string
+
+	fmt.Print("Informe a altura em metros: ")
+	fmt.Scan(&altura)
+
+	fmt.Print("Informe o peso em quilogramas: ")
+	fmt.Scan(&peso)
+
+	fmt.Print("Informe o sexo (M para masculino, F para feminino): ")
+	fmt.Scan(&sexo)
+
+	imc := peso / math.Pow(altura, 2)
+
+	var pesoIdeal float64
+	if sexo == "M" {
+		pesoIdeal = 24.9 * math.Pow(altura, 2)
+	} else if sexo == "F" {
+		pesoIdeal = 24.0 * math.Pow(altura, 2)
+	} else {
+		fmt.Println("Sexo inválido. Use M para masculino ou F para feminino.")
+		return
+	}
+
+	if imc < 18.5 {
+		fmt.Println("A pessoa está abaixo do peso ideal.")
+	} else if imc >= 18.5 && imc <= 24.9 {
+		fmt.Println("A pessoa está dentro do peso ideal.")
+	} else {
+		fmt.Println("A pessoa está acima do peso ideal.")
+	}
+
+	// Imprimindo o IMC e o peso ideal
+	fmt.Printf("IMC: %.2f\n", imc)
+	fmt.Printf("Peso ideal: %.2f kg\n", pesoIdeal)
+}
